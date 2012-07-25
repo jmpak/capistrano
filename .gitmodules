@@ -1,0 +1,3 @@
+[submodule "capistrano-demo-app"]
+	path = capistrano-demo-app
+	url = git@github.com:jmpak/capistrano-demo-app.git

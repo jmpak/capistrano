@@ -1,0 +1,13 @@
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install ruby1.9.3 build-essential git-core curl
+sudo update-alternatives --set ruby /usr/bin/ruby1.9.1
+sudo update-alternatives --set gem /usr/bin/gem1.9.1
+sudo apt-get install rubygems
+sudo REALLY_GEM_UPDATE_SYSTEM=1 gem update --system
+sudo gem install rubygems-update
+sudo update_rubygems
+sudo gem install bundler
+sudo apt-get install mysql-server libmysql-ruby libmysqlclient-dev
+sudo gem install mongrel -v 1.2.0.pre2
+

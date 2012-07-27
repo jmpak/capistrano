@@ -9,5 +9,33 @@ sudo gem install rubygems-update
 sudo update_rubygems
 sudo gem install bundler
 sudo apt-get install mysql-server libmysql-ruby libmysqlclient-dev
-sudo gem install mongrel -v 1.2.0.pre2
+cap deploy:setup(local machine)
+sudo vi /var/www/apps/capistrano-demo-app.jmpak.com/shared/config/database.yml
+  production:
+    adapter: mysql
+    encoding: utf8
+    database: capistrano_demo_app_production
+    username: root
+    password: 
+    socket: /var/run/mysqld/mysqld.sock
+    host: 127.0.0.1
+    port: 3306
+sudo apt-get install apache2
+sudo apt-get install libcurl4-openssl-dev 
+sudo apt-get install apache2-prefork-dev
+sudo apt-get install libapr1-dev 
+sudo apt-get install libaprutil1-dev
+sudo gem install passenger
+sudo passenger-install-apache2-module
+   Please edit your Apache configuration file, and add these lines
+   LoadModule passenger_module /usr/lib/ruby/gems/1.9.1/gems/passenger-3.0.14/ext/apache2/mod_passenger.so
+   PassengerRoot /usr/lib/ruby/gems/1.9.1/gems/passenger-3.0.14
+   PassengerRuby /usr/bin/ruby1.9.1
+sudo vi /etc/apache2/sites-available/capistrano-demo-app
+  <VirtualHost *:80>
+  	ServerName capistrano-demo-app.jmpak.com
+  	DocumentRoot /var/www/apps/capistrano-demo-app.jmpak.com/current/public
+  </VirtualHost>" > 
+sudo a2dissite default
+sudo a2ensite capistrano-demo-app
 
